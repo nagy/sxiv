@@ -319,6 +319,12 @@ void load_image(int new)
 		set_timeout(animate, img.multi.frames[img.multi.sel].delay, true);
 	else
 		reset_timeout(animate);
+
+  if (win.xwin != None) {
+    XChangeProperty(win.env.dpy, win.xwin, atoms[ATOM_SXIV_IMAGE_PATH],
+                    XInternAtom(win.env.dpy, "UTF8_STRING", False), 8,
+                    PropModeReplace, (unsigned char*)files[fileidx].path, strlen(files[fileidx].path));
+  }
 }
 
 bool mark_image(int n, bool on)

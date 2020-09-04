@@ -141,6 +141,7 @@ void win_init(win_t *win)
 	INIT_ATOM_(_NET_WM_STATE);
 	INIT_ATOM_(_NET_WM_STATE_FULLSCREEN);
 	INIT_ATOM_(_NET_WM_PID);
+	INIT_ATOM_(SXIV_IMAGE_PATH);
 }
 
 void win_open(win_t *win)
